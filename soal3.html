@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengecekan Bilangan Ganjil/Genap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #6f978b;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #009688;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 50px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #009688;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        #hasil {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pengecekan Bilangan Ganjil/Genap</h1>
+    <div class="form-container">
+        <label for="bilangan">Masukkan suatu bilangan:</label>
+        <input type="text" id="bilangan">
+        <button id="cekButton">Cek</button>
+        <p id="hasil"></p>
+    </div>
+
+    <script>
+        var bilanganInput = document.getElementById("bilangan");
+        var cekButton = document.getElementById("cekButton");
+        var hasil = document.getElementById("hasil");
+
+        cekButton.addEventListener("click", function () {
+            var bilangan = parseInt(bilanganInput.value);
+
+            if (isNaN(bilangan)) {
+                hasil.textContent = "Masukkan harus berupa bilangan!";
+            } else {
+                if (bilangan % 2 === 0) {
+                    hasil.textContent = bilangan + " adalah bilangan genap.";
+                } else {
+                    hasil.textContent = bilangan + " adalah bilangan ganjil.";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
